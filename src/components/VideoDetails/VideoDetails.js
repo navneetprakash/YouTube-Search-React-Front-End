@@ -5,16 +5,23 @@ import formatDate from '../../utils/formatDate';
 const StyledVideoContent = styled.div`
   display: grid;
   grid-template-columns: 1fr 4fr;
-  margin: 3rem 0rem;
+  margin: 2rem 0rem;
   padding: 0.5rem;
   max-width: 64rem;
   gap: 2rem;
   background-color: #ccc;
   border-radius: 0.3rem;
   justify-items: start;
+
   .published {
     font-size: 0.9rem;
     color: #333;
+  }
+
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
+    justify-items: unset;
+    margin: 1rem 0.5rem;
   }
 `;
 
@@ -28,6 +35,10 @@ const StyledVideoTitle = styled.h3`
     &:hover {
       color: #d7282f;
     }
+  }
+
+  @media (max-width: 800px) {
+    font-size: 1.2rem;
   }
 `;
 
@@ -44,6 +55,10 @@ const StyledImage = styled.img`
   &:hover {
     cursor: pointer;
     opacity: 0.8;
+  }
+
+  @media (max-width: 800px) {
+    width: 100%;
   }
 `;
 
@@ -66,7 +81,7 @@ const VideoDetails = ({ data }) => {
           target='_blank'
           rel='noreferrer'
         >
-          <StyledImage src={video.snippet.thumbnails.default.url} />
+          <StyledImage src={video.snippet.thumbnails.medium.url} />
         </a>
 
         {/* video title and description */}

@@ -2,7 +2,7 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import styled from 'styled-components';
 
-const StyledWrapperBackground = styled.div`
+const StyledWrapperBackground = styled.header`
   background-color: #333333;
   margin: 0;
   padding: 1rem 0;
@@ -14,6 +14,10 @@ const StyledTitle = styled.h1`
   color: #fff;
   font-size: 2rem;
   padding: 1rem;
+
+  @media (max-width: 800px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const Header = () => {

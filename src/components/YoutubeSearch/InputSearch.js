@@ -5,7 +5,6 @@ import Button from '../Shared/Button';
 import VideoDetails from '../VideoDetails/VideoDetails';
 import axios from 'axios';
 import LoadingSpinner from '../Shared/Spinner/LoadingSpinner';
-import { useEffect } from 'react';
 
 const StyledWrapper = styled.div`
   display: grid;
@@ -73,7 +72,7 @@ const YoutubeSearch = () => {
       setIsLoading(true);
 
       const response = await axios.get(
-        `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=${searchTerm}&key=AIzaSyAHU-_xBvDegc7oC4ecZBnonV36wYZsAXU`
+        `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${searchTerm}&key=AIzaSyAHU-_xBvDegc7oC4ecZBnonV36wYZsAXU`
       );
 
       setResults(response.data.items);
@@ -83,8 +82,6 @@ const YoutubeSearch = () => {
 
     setIsLoading(false);
   };
-
-  useEffect(() => {}, []);
 
   if (error) {
     return <div>{error.message}</div>;
