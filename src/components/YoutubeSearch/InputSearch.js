@@ -72,7 +72,7 @@ const YoutubeSearch = () => {
       setIsLoading(true);
 
       const response = await axios.get(
-        `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${searchTerm}&key=AIzaSyAHU-_xBvDegc7oC4ecZBnonV36wYZsAXU`
+        `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${searchTerm}&key=AIzaSyB9-3fDeaHO3vaNLptYGsstiFKpdSaW-FE`
       );
 
       setResults(response.data.items);
